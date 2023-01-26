@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ContextProvider>
       {/* Change Notification settings here */}
       <ToastContainer
-        position="bottom-right"
+        position="bottom-left"
         autoClose={5000}
         hideProgressBar
         newestOnTop
