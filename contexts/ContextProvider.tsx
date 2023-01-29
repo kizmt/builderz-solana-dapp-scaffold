@@ -7,9 +7,8 @@ import { WalletModalProvider as ReactUIWalletModalProvider } from "@solana/walle
 import {
   PhantomWalletAdapter,
   SolflareWalletAdapter,
-  SolletExtensionWalletAdapter,
-  SolletWalletAdapter,
-  TorusWalletAdapter,
+  GlowWalletAdapter,
+  BackpackWalletAdapter,
   // LedgerWalletAdapter,
   // SlopeWalletAdapter,
 } from "@solana/wallet-adapter-wallets";
@@ -26,13 +25,12 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({
     () => [
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
-      new SolletWalletAdapter({ network }),
-      new SolletExtensionWalletAdapter({ network }),
-      new TorusWalletAdapter(),
+      new GlowWalletAdapter(),
+      new BackpackWalletAdapter(),
       // new LedgerWalletAdapter(),
       // new SlopeWalletAdapter(),
     ],
-    [network]
+    []
   );
 
   const onError = useCallback((error: WalletError) => {
